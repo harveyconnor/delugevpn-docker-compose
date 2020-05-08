@@ -15,6 +15,7 @@ cp .env.example .env
 docker-compose up -d
 ```
 Once it is running (check with `docker ps` and `docker-compose logs deluge`), you need to set your download directories in the web client at http://`IP`:8112. Set the directories to:
+
 Downloads: `/data/incomplete`
 Downloads complete: `/data/complete`
 
