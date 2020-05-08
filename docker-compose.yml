@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  deluge:
+    container_name: deluge
+    image: binhex/arch-delugevpn
+    ports:
+      - "${IP}:8112:8112"
+      - "${IP}:8118:8118"
+      - "${IP}:58846:58846"
+      - "${IP}:58946:58946"
+    volumes:
+      - ./config:/config
+      - ${DOWNLOADS_DIR}:/data
+      - /etc/localtime:/etc/localtime:ro
+    env_file: .env
+    environment:
+      VPN_ENABLED: ${VPN_ENABLED}
+      VPN_USER: ${VPN_USER}
+      VPN_PASS: ${VPN_PASS}
+      VPN_PROV: ${VPN_PROV}
+      VPN_OPTIONS: ${VPN_OPTIONS}
+      STRICT_PORT_FORWARD: ${STRICT_PORT_FORWARD}
+      ENABLE_PRIVOXY: ${ENABLE_PRIVOXY}
+      LAN_NETWORK: ${LAN_NETWORK}
+      NAME_SERVERS: ${NAME_SERVERS}
+      DELUGE_DAEMON_LOG_LEVEL: ${DELUGE_DAEMON_LOG_LEVEL}
+      DELUGE_WEB_LOG_LEVEL: ${DELUGE_WEB_LOG_LEVEL}
+      ADDITIONAL_PORTS: ${ADDITIONAL_PORTS}
+      DEBUG: ${DEBUG}
+      UMASK: ${UMASK}
+      PUID: ${PUID}
+      PGID: ${PGID}      
+    cap_add:
+      - NET_ADMIN
