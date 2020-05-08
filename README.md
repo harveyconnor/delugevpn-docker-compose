@@ -19,7 +19,7 @@ Once it is running (check with `docker ps` and `docker-compose logs deluge`), yo
 Downloads: `/data/incomplete`
 Downloads complete: `/data/complete`
 
-For more information on the environment variables. Please check the binhex/arch-delugevpn docker hub or github page.
+For more information on the environment variables. Please check the [binhex/arch-delugevpn](https://hub.docker.com/r/binhex/arch-delugevpn/) docker hub or github page.
 
 ## Contributors
 - [@binhex](https://github.com/binhex)
